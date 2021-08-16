@@ -21,15 +21,10 @@ public class Solution {
 
 
     public static void reverseString(char[] s) {
-
         char[] c = s.clone();
-
         //1. for 문으로 인덱스를 끝에서부터 시작
         for (int i = s.length -1 ; 0 <= i; i--) {
-            System.out.println("c " + i + " : " + c[i]);
             int a = s.length - i - 1 ;
-            System.out.println("s " + a + " : " + s[a]);
-            System.out.println();
             s[a] = c[i];
         }
 

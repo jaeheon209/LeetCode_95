@@ -23,6 +23,8 @@ public class Solution {
 
         //1. paragraph 전처리 : 소문자, 특수문자, split
         String[] paragraphArr = paragraph.replaceAll("[^a-zA-Z0-9 ]", " ").toLowerCase().split("\\s+");
+        // "\\s : 단일 공백 문자
+        // "\\s+ : 하나 이상의 공백 문자 입니다.
 
         //2. banned to hashset
         Set<String> bannedSet = new HashSet<>();
@@ -33,7 +35,7 @@ public class Solution {
         //3. word count
         Map<String, Integer> wordCount = new HashMap<>();
         for (String word : paragraphArr) {
-            if(!bannedSet.contains(word)){
+            if (!bannedSet.contains(word)) {
                 int count = wordCount.getOrDefault(word, 0);
                 wordCount.put(word, count + 1);
             }
@@ -49,6 +51,14 @@ public class Solution {
 //            }
 //        }
 //        return maxCountWord;
+
         return Collections.max(wordCount.entrySet(), Map.Entry.comparingByValue()).getKey();
     }
+
+
+
+
+
+
+
 }

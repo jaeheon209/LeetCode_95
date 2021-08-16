@@ -32,7 +32,6 @@ public class Solution {
         //1. 문자로그 숫자로그 구분 O(n)
         for (String log : logs) {
             String element = log.split(" ")[1];
-//            if (isNumber(element)) { -- 더간단한 방법으로
             if (!Character.isDigit(element.charAt(0))) {
                 digs.add(log);
             } else {
@@ -41,6 +40,7 @@ public class Solution {
         }
 
         //2. 문자로그 정렬 (Sorting)
+        //TODO : 반복 학습 필요
         //{"let1 art can", "let2 own kit dig", "let3 art zero"};
         lets.sort(Comparator.comparing((String let) -> let.split(" ", 2)[1])
                 .thenComparing((String let) -> let.split(" ", 2)[0]));

@@ -28,6 +28,8 @@ public class Solution {
 
         // 1) 띄워쓰기랑 특수문자 제외해야한다.
         String[] value = lower.replaceAll("[^a-z0-9]", "").split("");
+
+        String[] sArr = s.replaceAll("[^A-Za-z0-9]","").toLowerCase().split("");
         // 삭제 - 3) 문자열을 뒤집는다.
         // 4) 기존 문자열과 뒤집은 문자열을 비교
         // 홀수  7  /2 = 3
