@@ -12,9 +12,12 @@ public class Solution {
 
         List<List<Integer>> answer;
 
-        int[] nums = {-1, 0, 1, 2, -1, -4};
+//        int[] nums = {-1, 0, 1, 2, -1, -4};
+        int[] nums = {-2,0,0,2,2};
+
         answer = threeSum(nums);
 
+        // answer is '3 sum = 0'
         System.out.println("answer : " + answer);
 
     }
@@ -24,6 +27,7 @@ public class Solution {
 
         Arrays.sort(nums);
         for (int i = 0; i < nums.length - 1; i++) {
+            // 기준이 되는 i의 중복 제거.
             if (i > 0 && nums[i] == nums[i - 1]) {
                 continue;
             }
@@ -40,6 +44,8 @@ public class Solution {
                 } else {
                     List<Integer> element = new ArrayList<>(Arrays.asList(nums[left], nums[i], nums[right]));
                     answer.add(element);
+
+                    // answer가 나왔을때 left & right에 대한 중복 제거
                     while (left < right && nums[left] == nums[left + 1]) {
                         left += 1;
                     }
