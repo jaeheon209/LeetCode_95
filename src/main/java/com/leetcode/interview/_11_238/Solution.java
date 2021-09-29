@@ -1,8 +1,8 @@
 package com.leetcode.interview._11_238;
 
-public class Solution {
 
-    // 238. https://leetcode.com/problems/product-of-array-except-self/
+// 238. https://leetcode.com/problems/product-of-array-except-self/
+public class Solution {
     public static void main(String[] args) {
 
         int[] nums = {1, 2, 3, 4};
@@ -15,6 +15,7 @@ public class Solution {
         }
 
     }
+
 
     // 직접 해결
     public static int[] productExceptSelf1(int[] nums) {

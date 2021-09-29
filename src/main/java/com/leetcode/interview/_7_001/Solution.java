@@ -62,6 +62,8 @@ public class Solution {
         for (int i = 0; i < nums.length; i++) {
             int key = target - nums[i];
             if (numsMap.get(nums[i]) != null) {
+                answer[0] = i;
+                answer[1] = numsMap.get(nums[i]);
                 return answer;
             } else {
                 numsMap.put(key, i);
