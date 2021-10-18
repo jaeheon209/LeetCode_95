@@ -15,7 +15,7 @@ public class Solution {
                                         new ListNode(5)))));
 
         // process
-        ListNode answer = reverseList(head);
+        ListNode answer = reverseList2(head);
 
         //output
         outputPrint(answer);
@@ -33,6 +33,22 @@ public class Solution {
             prev = head;
             head = next;
         }
+        return prev;
+    }
+
+    public static ListNode reverseList2(ListNode head) {
+        return reverse(null, head);
+    }
+
+    public static ListNode reverse(ListNode prev, ListNode node) {
+
+        if(node == null){
+            return null;
+        }
+        ListNode next = node.next;
+        node.next = prev;
+        reverse(node, next);
+
         return prev;
     }
 
